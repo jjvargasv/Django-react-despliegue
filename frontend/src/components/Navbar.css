@@ -1,0 +1,220 @@
+.navbar-taskmaster {
+  width: 100vw;
+  background: linear-gradient(90deg, #4f8cff 0%, #38e6c5 100%);
+  padding: 0 38px;
+  min-height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 6px 32px #4f8cff22, 0 1.5px 8px #38e6c566;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom-left-radius: 22px;
+  border-bottom-right-radius: 22px;
+  backdrop-filter: blur(10px) saturate(1.2);
+  transition: box-shadow 0.25s, background 0.25s;
+}
+
+.navbar-taskmaster:hover {
+  box-shadow: 0 12px 40px #4f8cff33, 0 2px 12px #38e6c566;
+  background: linear-gradient(90deg, #57aaff 0%, #38e6c5 100%);
+}
+
+@media (max-width: 700px) {
+  .navbar-taskmaster {
+    padding: 0 8px;
+    min-height: 54px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+  }
+}
+
+
+.navbar-logo {
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px #38e6c555, 0 1px 2px #4f8cff33;
+  padding: 0 10px;
+  user-select: none;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+
+.navbar-logo:hover {
+  color: #38e6c5;
+  text-shadow: 0 4px 16px #4f8cff66;
+}
+
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  min-width: 0;
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  scrollbar-width: none;
+}
+.navbar-links::-webkit-scrollbar {
+  display: none;
+}
+
+
+.navbar-links a, .navbar-create, .navbar-logout {
+  min-width: 90px;
+  max-width: 260px;
+  padding: 9px 18px;
+  margin-right: 4px;
+  margin-left: 4px;
+  font-size: 1.07rem;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+  text-align: center;
+  border-radius: 10px;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  box-shadow: 0 2px 8px #4f8cff13;
+}
+
+
+@media (max-width: 700px) {
+  .navbar-links {
+    gap: 7px;
+    padding-bottom: 2px;
+  }
+  .navbar-links a, .navbar-create, .navbar-logout {
+    min-width: 70px;
+    max-width: 94vw;
+    font-size: 1rem;
+    padding: 8px 6px;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    word-break: break-word;
+    border-radius: 8px;
+  }
+}
+
+
+
+.navbar-links a {
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 7px 14px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.navbar-links a:hover {
+  background: #ffffff33;
+}
+
+.navbar-logout {
+  background: linear-gradient(90deg, #fff 70%, #e6e9f0 100%);
+  color: #4f8cff;
+  border: none;
+  border-radius: 10px;
+  padding: 9px 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  margin-left: 4px;
+  font-size: 1.07rem;
+  box-shadow: 0 2px 8px #4f8cff13;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+}
+
+.navbar-logout:hover {
+  background: #e6e9f0;
+  color: #38e6c5;
+  box-shadow: 0 4px 16px #38e6c544;
+}
+
+
+.navbar-create {
+  background: linear-gradient(90deg, #4f8cff 60%, #38bdf8 100%);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 7px 14px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #dbeafe;
+  transition: background 0.2s;
+  max-width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.navbar-create:hover {
+  background: linear-gradient(90deg, #38bdf8 60%, #4f8cff 100%);
+}
+
+.navbar-logout:hover {
+  background: #e6e9f0;
+  color: #38e6c5;
+}
+
+@media (max-width: 900px) {
+  .navbar-links {
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .navbar-links a, .navbar-create, .navbar-logout {
+    font-size: 0.95rem;
+    padding: 6px 8px;
+    min-width: 70px;
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar-taskmaster {
+    flex-direction: column;
+    height: auto;
+    padding: 0 4px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  .navbar-logo {
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+  }
+  .navbar-links {
+    width: 100%;
+    justify-content: center;
+    gap: 5px;
+  }
+  .navbar-links a, .navbar-create, .navbar-logout {
+    font-size: 0.92rem;
+    padding: 5px 4px;
+    min-width: 60px;
+    max-width: 90px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .navbar-taskmaster {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 4vw;
+    gap: 10px;
+  }
+  .navbar-links {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
