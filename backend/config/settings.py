@@ -153,6 +153,9 @@ REST_FRAMEWORK = {
     ),
 }
 
+# Configuración de duración de tokens JWT
+from .simplejwt_settings import SIMPLE_JWT
+
 # Modelo de usuario personalizado
 AUTH_USER_MODEL = 'users.CustomUser'
 
