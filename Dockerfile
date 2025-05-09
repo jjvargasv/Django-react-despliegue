@@ -31,4 +31,4 @@ COPY --from=frontend-build /app/frontend/build ./backend/static/
 ENV DJANGO_SETTINGS_MODULE=config.settings
 
 # Comando por defecto (puedes cambiarlo por gunicorn para producción real)
-CMD ["python", "backend/manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python", "backend/manage.py", "runserver", "0.0.0.0:8080"]
