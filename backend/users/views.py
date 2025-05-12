@@ -36,6 +36,15 @@ class RegisterView(generics.CreateAPIView):
 class CustomTokenObtainPairView(TokenObtainPairView):
     permission_classes = [permissions.AllowAny]
 
+    def options(self, request, *args, **kwargs):
+        response = super().options(request, *args, **kwargs)
+        response['Access-Control-Allow-Origin'] = "https://tasmarkerjt.web.app"
+        response['Access-Control-Allow-Methods'] = "POST, OPTIONS"
+        response['Access-Control-Allow-Headers'] = "Content-Type, Authorization"
+        response['Access-Control-Allow-Credentials'] = 'true'
+        return response
+
+
 class ProfileView(generics.RetrieveUpdateAPIView):
     queryset = User.objects.all()
     serializer_class = CustomUserSerializer
