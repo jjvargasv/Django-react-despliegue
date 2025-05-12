@@ -126,6 +126,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # CORS
 CORS_ALLOW_ALL_ORIGINS = True
+CORS_ORIGIN_ALLOW_ALL = True  # Compatibilidad máxima para CORS
 #CORS_ALLOWED_ORIGINS = [
 #    "https://tasmarkerjt.web.app",
 #]
