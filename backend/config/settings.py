@@ -125,10 +125,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 
 # CORS
-CORS_ALLOW_ALL_ORIGINS = False
-CORS_ALLOWED_ORIGINS = [
-    "https://tasmarkerjt.web.app",
-]
+CORS_ALLOW_ALL_ORIGINS = True
+#CORS_ALLOWED_ORIGINS = [
+#    "https://tasmarkerjt.web.app",
+#]
 CORS_ALLOW_CREDENTIALS = True
 
 # Permitir headers y métodos comunes para preflight
