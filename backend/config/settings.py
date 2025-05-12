@@ -88,15 +88,12 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'mssql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.environ.get('DB_NAME', ''),
         'USER': os.environ.get('DB_USER', ''),
         'PASSWORD': os.environ.get('DB_PASSWORD', ''),
         'HOST': os.environ.get('DB_HOST', ''),
-        'PORT': os.environ.get('DB_PORT', ''),
-        'OPTIONS': {
-            'driver': 'ODBC Driver 17 for SQL Server',
-        },
+        'PORT': os.environ.get('DB_PORT', '5432'),
     }
 }
 
@@ -123,7 +120,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 
 # CORS
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOWED_ORIGINS = [
+    "https://tasmarkerjt.web.app",
+]
+CORS_ALLOW_CREDENTIALS = True
 
 # Media files (profile pictures)
 MEDIA_URL = '/media/'
