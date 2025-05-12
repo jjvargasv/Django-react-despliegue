@@ -1,6 +1,7 @@
 Django>=4.2
 psycopg2-binary>=2.9
 django-cors-headers
+gunicorn
 # mssql-django eliminado
 
 # Resto de dependencias
