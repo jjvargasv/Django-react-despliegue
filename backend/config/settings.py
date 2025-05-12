@@ -28,9 +28,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'django-react-despliegue-507499099429.us-central1.run.app',
+    'tasmarkerjt.web.app',
+    'localhost',
+    '127.0.0.1',
+]
 
 
 # Application definition
@@ -125,6 +130,27 @@ CORS_ALLOWED_ORIGINS = [
     "https://tasmarkerjt.web.app",
 ]
 CORS_ALLOW_CREDENTIALS = True
+
+# Permitir headers y métodos comunes para preflight
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "dnt",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+]
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
 
 # Media files (profile pictures)
 MEDIA_URL = '/media/'
