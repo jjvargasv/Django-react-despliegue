@@ -15,10 +15,23 @@ from .serializers import RegisterSerializer, CustomUserSerializer
 
 User = get_user_model()
 
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.response import Response
+from rest_framework import status
+
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = RegisterSerializer
     permission_classes = [permissions.AllowAny]
+
+    def options(self, request, *args, **kwargs):
+        response = super().options(request, *args, **kwargs)
+        response['Access-Control-Allow-Origin'] = "https://tasmarkerjt.web.app"
+        response['Access-Control-Allow-Methods'] = "POST, OPTIONS"
+        response['Access-Control-Allow-Headers'] = "Content-Type, Authorization"
+        response['Access-Control-Allow-Credentials'] = 'true'
+        return response
+
 
 class CustomTokenObtainPairView(TokenObtainPairView):
     permission_classes = [permissions.AllowAny]
