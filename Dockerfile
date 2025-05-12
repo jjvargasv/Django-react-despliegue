@@ -32,3 +32,4 @@ ENV DJANGO_SETTINGS_MODULE=config.settings
 
 # Comando por defecto (puedes cambiarlo por gunicorn para producción real)
 CMD ["gunicorn", "--bind", "0.0.0.0:8080", "config.wsgi:application"]
+# Cambio mínimo para forzar rebuild
